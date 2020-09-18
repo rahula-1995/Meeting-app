@@ -1,4 +1,4 @@
-
+const jwt = require( 'jsonwebtoken' );
 const mongoose = require("mongoose");
 const meetModel = require("../models/meetModel");
 const Meet = mongoose.model('Meet', meetModel.MeetSchema);
@@ -23,6 +23,7 @@ exports.getUser=(req, res)=>
                 {
                     return res.status(401).json({ message: err });
                 }
+                
                 else if (Users.length>0)
                 {
                     const claims = { email: Users[0].email, userId: Users[0]._id };
