@@ -103,8 +103,8 @@ exports.MeetSchema = new Schema({
                         throw new Error("Enter a valid Email")
                     }
                 },
-                lowercase:true,
-                unique:true
+                lowercase:true
+                
             },
             _id: false
         }

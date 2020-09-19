@@ -69,5 +69,5 @@ app.use('/Users', meetRoutes.unprotected)
 var port = process.env.PORT || 8080;
 app.listen(port, function() 
 {
-    console.log("Running FirstRest on Port "+ port)
+    console.log("Running Meeting Scheduler on Port "+ port)
 })

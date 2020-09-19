@@ -101,7 +101,7 @@ exports.Filtermeeting=(req, res,next)=> {
             //if(req.query.period>0){
         const period = req.query.period
         
-        console.log(req.query.period)
+        //console.log(req.query.period)
         
         const search = req.query.search;
         //const userId = req.query.userId;
@@ -190,7 +190,7 @@ exports.addNewMeeting=(req, res)=>
             {
                 if (err) 
                 {
-                    return res.status(404).json({ message: error });
+                    return res.status(404).json({ message: err });
                 }
                 return res.status(200).json( Meet );
                 //res.json(Meet);
@@ -274,7 +274,7 @@ exports.removeAttendes=(req, res)=>
                 else
                 {
                     return res.status(404).json({ message: "attendes list is empty" });
-                }*/console.log(Meet.length)
+                }*/
                 
                 return res.status(200).json(Meet);
             });
@@ -304,7 +304,7 @@ exports.showcalender=(req, res)=>
             const email = req.query.email;
             const dates = String(req.query.date);
             const date = new Date(dates);
-            console.log(date, email);
+            //console.log(date, email);
             let params = { date: date, "attendees.email": email };
             Meet.find(params, (err, Users) => 
             {
