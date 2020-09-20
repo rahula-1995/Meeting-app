@@ -299,13 +299,13 @@ exports.showcalender=(req, res)=>
     {
         
     //console.log(req) 
-        if(req.query.email!==undefined && req.query.date!==undefined )
+        if(req.query.email!==undefined /*&& req.query.date!==undefined*/ )
         {
             const email = req.query.email;
-            const dates = String(req.query.date);
-            const date = new Date(dates);
+            //const dates = String(req.query.date);
+            //const date = new Date(dates);
             //console.log(date, email);
-            let params = { date: date, "attendees.email": email };
+            let params = { /*date: date,*/ "attendees.email": email };
             Meet.find(params, (err, Users) => 
             {
                 if (err) 
